@@ -1,3 +1,6 @@
 [submodule "config/nvim"]
 	path = config/nvim
 	url = git@github.com:JuaniRaggio/nvim-config.git
+[submodule "emacs.config"]
+	path = emacs.config
+	url = git@github.com:JuaniRaggio/doomemacs.git
