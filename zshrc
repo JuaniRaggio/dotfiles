@@ -15,7 +15,7 @@ eval "$(zoxide init zsh)"
 
 # personal preferences
 alias rm="trash"
-alias ls="eza -a --sort=extension --no-time --color=always --long --git --no-filesize --icons=always --no-user"
+alias ls="eza --sort=extension --no-time --color=always --long --git --no-filesize --icons=always --no-user"
 alias vi="nvim ."
 alias cat="bat"
 alias show="kitten icat"
