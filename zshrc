@@ -12,14 +12,12 @@ source <(fzf --zsh)
 export FZF_DEFAULT_OPTS='--height 40% --tmux bottom,40% --layout reverse --border top'
 
 eval "$(zoxide init zsh)"
-
 # personal preferences
 alias rm="trash"
 alias ls="eza --sort=extension --no-time --color=always --long --git --no-filesize --icons=always --no-user"
 alias vi="nvim ."
 alias cat="bat"
 alias show="kitten icat"
-alias cd="z"
 alias cdi="zi"
 
 # for current working proyect
@@ -36,7 +34,6 @@ export PATH="$HOME/.emacs.d/bin:$PATH"
 export PATH="$HOME/XML/xercesSamples.jar:$PATH"
 export PATH="$HOME/XML/xml-apis.jar:$PATH"
 export PATH="$HOME/XML/xercesImpl.jar:$PATH"
-# export PATH="$(/usr/libexec/java_home):$PATH"
 export CLASSPATH=$CLASSPATH:$HOME/XML/xerces-2_12_2/xercesSamples.jar:$HOME/XML/xerces-2_12_2/xml-apis.jar:$HOME/XML/xerces-2_12_2/xercesImpl.jar:
 
 # llvm for language server
@@ -44,9 +41,8 @@ export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 
 # for java
 # export path and home for java's version control
-export JAVA_HOME=$(/usr/libexec/java_home -v 21)
-# export JAVA_HOME=/opt/homebrew/opt/openjdk@21
-export PATH=$JAVA_HOME/bin:$PATH
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home"
+export PATH="$JAVA_HOME/bin:$PATH"
 
 # for C
 # makes my local/include directory part of C's libs. Eg: #include <rand.h> is a valid include since rand.h is inside .local/include
