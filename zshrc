@@ -51,35 +51,10 @@ export C_INCLUDE_PATH=/opt/homebrew/include:$C_INCLUDE_PATH
 export LIBRARY_PATH=/opt/homebrew/lib:$LIBRARY_PATH
 export CPLUS_INCLUDE_PATH=/opt/homebrew/include:$CPLUS_INCLUDE_PATH
 
-prueba() {
-    nvim $HOME/prueba.c
-}
 # clang compilation with flags -> address sanitizer works different from gcc's address sanitizer
 compile() {
     clang -fsanitize=address -Wall -pedantic -std=c99 -g "$@"
 }
-
-# for pampero.itba.edu.ar
-pampero() {
-    ssh jgarciavautrinraggi@pampero.itba.edu.ar
-}
-# compilation and execution of small C proyects in pampero
-pgcc() {
-    LOCAL_FILE="$1"
-    REMOTE_USER="jgarciavautrinraggi"
-    REMOTE_HOST="pampero.itba.edu.ar"
-    REMOTE_PATH="/home/jgarciavautrinraggi/codigos-pi"
-    FILE_NAME=$(basename "$LOCAL_FILE")
-    COMPILE_CMD="gcc /home/jgarciavautrinraggi/codigos-pi/include/rand.c /home/jgarciavautrinraggi/codigos-pi/include/getline.c /home/jgarciavautrinraggi/codigos-pi/include/getnum.c -Wall -pedantic -std=c99 -g -fsanitize=address -lm $FILE_NAME"
-    RUN_CMD="./a.out"
-
-    echo "Copiando archivo a servidor..."
-    scp "$LOCAL_FILE" "$REMOTE_USER@$REMOTE_HOST:$REMOTE_PATH"
-
-    echo "Compilando y ejecutando en el servidor..."
-    ssh -t "$REMOTE_USER@$REMOTE_HOST" "cd $REMOTE_PATH && $COMPILE_CMD && $RUN_CMD"
-}
-
 
 # Yazi setup
 export EDITOR="nvim"
