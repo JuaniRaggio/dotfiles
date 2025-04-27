@@ -56,6 +56,12 @@ compile() {
     clang -fsanitize=address -Wall -pedantic -std=c99 -g "$@"
 }
 
+# Make executable
+touchx() {
+  touch "$@";
+  chmod +x "$@"
+}
+
 # Yazi setup
 export EDITOR="nvim"
 
