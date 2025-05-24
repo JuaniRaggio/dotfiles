@@ -39,6 +39,9 @@ export CLASSPATH=$CLASSPATH:$HOME/XML/xerces-2_12_2/xercesSamples.jar:$HOME/XML/
 # llvm for language server
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 
+# for ruby homebrew version
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+
 # for java
 # export path and home for java's version control
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home"
